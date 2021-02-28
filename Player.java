@@ -109,8 +109,7 @@ public class Player extends Game
 
 			currentSprite = list.get(counter) ;
 
-			if(endTheGame)
-				endGame() ;
+			if(endTheGame)	endGame() ;
 
 			if(jumping)
 			{
@@ -127,15 +126,14 @@ public class Player extends Game
 
 			if(falling)
 			{
-				if(this.getBox().getMinY() < mapHeight)
-				{
+				if(this.vertical_speed > terminalVelocity)	
+					this.vertical_speed = terminalVelocity ;
+				else
 					this.vertical_speed+=gravity ;
 
-					if(this.vertical_speed > terminalVelocity)	this.vertical_speed = terminalVelocity ;
-
-					this.y+=this.vertical_speed ;
-				}
-				else if(this.y > mapHeight)
+				this.y+=this.vertical_speed ;
+				
+				if(this.y > mapHeight)
 				{
 					Text txt = new Text("You Just Got Caked!") ;
 					txt.setFill(Color.WHITE) ;
