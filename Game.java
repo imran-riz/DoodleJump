@@ -127,7 +127,7 @@ public class Game extends Application
 
 	private void play()
 	{
-		player.jump() ;	
+		player.jump() ;
 
 		counter = 0 ;
 		keyFrame = new KeyFrame(Duration.millis(100), event ->
@@ -288,7 +288,6 @@ public class Game extends Application
 							{
 								score+=10 ;
 								scoreLabel.setText("Score : " + Integer.toString(score)) ;
-//								System.out.println("Score = " + score) ;
 							}
 
 							platform_on = platform ;
